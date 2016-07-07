@@ -11,3 +11,9 @@ scripts/
   selects.sql         	--> Script para ver los datos originales
 utils/					--> SQLite Studio
 ```
+## Links
+
+- Weka
+(http://www.cs.waikato.ac.nz/ml/weka/)
+- Seleccion de atributos con weka 
+(http://machinelearningmastery.com/feature-selection-to-improve-accuracy-and-decrease-training-time/)
