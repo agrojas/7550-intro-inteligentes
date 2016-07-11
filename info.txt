@@ -1,29 +1,12 @@
-Los atributos derivados son:
-- rangoMayores
-- rangoHombre
-
-Para los rangos se definio que
-- En el caso de hombre y mujer, si el porcentaje era mejor que el 50% el rango es 1 sino 2
-- En el resto de los casos, hay 4 rangos. Si es menor al 25% es rango= 1, entre 25 y 50 el rango es 2, entre 50 y 75  el rango es 3 y entre 100 y 75 el rango es 4
-
 === Run information ===
 
 Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
-Relation:     candidato-ganador-por-county-con-estadisticas-short-format-weka.filters.unsupervised.attribute.Remove-R1-2,5-6-weka.filters.unsupervised.attribute.Remove-R2
+Relation:     candidato-ganador-por-county-con-estadisticas-short-format-weka.filters.unsupervised.attribute.Remove-R1-2,5-6-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R2-weka.filters.unsupervised.attribute.Remove-R9,11-weka.filters.unsupervised.attribute.Remove-R2-5,9-weka.filters.unsupervised.attribute.Remove-R2
 Instances:    1634
-Attributes:   13
+Attributes:   4
               candidate
-              rangoPoblacion
-              rangoMenores
-              rangoMayores
-              rangoAncianos
-              rangoMujer
-              rangoHombre
               rangoPoblacionBlanca
               rangoPoblacionNegra
-              rangoPoblacionNativo
-              rangoPoblacionAsiaticos
-              rangoPoblacionHawaianos
               rangoPoblacionLatinos
 Test mode:    evaluate on training data
 
@@ -34,65 +17,23 @@ J48 pruned tree
 
 rangoPoblacionNegra <= 1
 |   rangoPoblacionLatinos <= 1
-|   |   rangoMenores <= 1
-|   |   |   rangoPoblacionBlanca <= 3
-|   |   |   |   rangoPoblacionBlanca <= 2: Bernie Sanders (4.0)
-|   |   |   |   rangoPoblacionBlanca > 2
-|   |   |   |   |   rangoPoblacion <= 3
-|   |   |   |   |   |   rangoAncianos <= 1: Bernie Sanders (36.0/23.0)
-|   |   |   |   |   |   rangoAncianos > 1: Donald Trump (2.0/1.0)
-|   |   |   |   |   rangoPoblacion > 3: Hillary Clinton (22.0/9.0)
-|   |   |   rangoPoblacionBlanca > 3: Donald Trump (958.0/359.0)
-|   |   rangoMenores > 1
-|   |   |   rangoPoblacionBlanca <= 2
-|   |   |   |   rangoPoblacionBlanca <= 1: Bernie Sanders (7.0/3.0)
-|   |   |   |   rangoPoblacionBlanca > 1: Donald Trump (7.0/3.0)
-|   |   |   rangoPoblacionBlanca > 2
-|   |   |   |   rangoPoblacionBlanca <= 3
-|   |   |   |   |   rangoPoblacion <= 3: Donald Trump (11.0/2.0)
-|   |   |   |   |   rangoPoblacion > 3
-|   |   |   |   |   |   rangoMujer <= 1: Hillary Clinton (2.0/1.0)
-|   |   |   |   |   |   rangoMujer > 1: Ted Cruz (13.0/7.0)
-|   |   |   |   rangoPoblacionBlanca > 3
-|   |   |   |   |   rangoMayores <= 2: Ted Cruz (44.0/20.0)
-|   |   |   |   |   rangoMayores > 2: Donald Trump (82.0/45.0)
+|   |   rangoPoblacionBlanca <= 3
+|   |   |   rangoPoblacionBlanca <= 2: Bernie Sanders (18.0/8.0)
+|   |   |   rangoPoblacionBlanca > 2: Donald Trump (86.0/56.0)
+|   |   rangoPoblacionBlanca > 3: Donald Trump (1084.0/438.0)
 |   rangoPoblacionLatinos > 1
 |   |   rangoPoblacionLatinos <= 3
 |   |   |   rangoPoblacionBlanca <= 3: Hillary Clinton (15.0/1.0)
-|   |   |   rangoPoblacionBlanca > 3
-|   |   |   |   rangoMenores <= 1
-|   |   |   |   |   rangoMayores <= 2
-|   |   |   |   |   |   rangoMujer <= 1: Donald Trump (3.0)
-|   |   |   |   |   |   rangoMujer > 1: Ted Cruz (14.0/5.0)
-|   |   |   |   |   rangoMayores > 2
-|   |   |   |   |   |   rangoPoblacionLatinos <= 2
-|   |   |   |   |   |   |   rangoPoblacion <= 3
-|   |   |   |   |   |   |   |   rangoPoblacion <= 2
-|   |   |   |   |   |   |   |   |   rangoAncianos <= 1: Ted Cruz (17.0/9.0)
-|   |   |   |   |   |   |   |   |   rangoAncianos > 1: Hillary Clinton (2.0/1.0)
-|   |   |   |   |   |   |   |   rangoPoblacion > 2: Donald Trump (22.0/12.0)
-|   |   |   |   |   |   |   rangoPoblacion > 3: Hillary Clinton (21.0/11.0)
-|   |   |   |   |   |   rangoPoblacionLatinos > 2
-|   |   |   |   |   |   |   rangoPoblacion <= 2
-|   |   |   |   |   |   |   |   rangoAncianos <= 1: Ted Cruz (2.0)
-|   |   |   |   |   |   |   |   rangoAncianos > 1: Hillary Clinton (2.0)
-|   |   |   |   |   |   |   rangoPoblacion > 2: Hillary Clinton (11.0/3.0)
-|   |   |   |   rangoMenores > 1
-|   |   |   |   |   rangoPoblacionLatinos <= 2: Ted Cruz (56.0/25.0)
-|   |   |   |   |   rangoPoblacionLatinos > 2
-|   |   |   |   |   |   rangoPoblacion <= 3: Ted Cruz (34.0/16.0)
-|   |   |   |   |   |   rangoPoblacion > 3
-|   |   |   |   |   |   |   rangoMujer <= 1: Donald Trump (5.0/2.0)
-|   |   |   |   |   |   |   rangoMujer > 1: Hillary Clinton (6.0/2.0)
+|   |   |   rangoPoblacionBlanca > 3: Ted Cruz (195.0/115.0)
 |   |   rangoPoblacionLatinos > 3: Hillary Clinton (22.0)
 rangoPoblacionNegra > 1: Hillary Clinton (214.0/66.0)
 
-Number of Leaves  : 	28
+Number of Leaves  :   7
 
-Size of the tree : 	55
+Size of the tree :  13
 
 
-Time taken to build model: 0.03 seconds
+Time taken to build model: 0.01 seconds
 
 === Evaluation on training set ===
 
@@ -100,37 +41,37 @@ Time taken to test model on training data: 0 seconds
 
 === Summary ===
 
-Correctly Classified Instances        1008               61.6891 %
-Incorrectly Classified Instances       626               38.3109 %
-Kappa statistic                          0.3763
-Mean absolute error                      0.1364
-Root mean squared error                  0.2612
-Relative absolute error                 80.3387 %
-Root relative squared error             89.6949 %
+Correctly Classified Instances         950               58.1395 %
+Incorrectly Classified Instances       684               41.8605 %
+Kappa statistic                          0.3023
+Mean absolute error                      0.1455
+Root mean squared error                  0.2698
+Relative absolute error                 85.7113 %
+Root relative squared error             92.6455 %
 Total Number of Instances             1634     
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0,634    0,073    0,703      0,634    0,667      0,582    0,815     0,617     Hillary Clinton
-                 0,842    0,503    0,611      0,842    0,708      0,359    0,697     0,619     Donald Trump
-                 0,378    0,060    0,544      0,378    0,446      0,372    0,766     0,394     Ted Cruz
-                 0,102    0,018    0,447      0,102    0,167      0,167    0,686     0,234     Bernie Sanders
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,701     0,020     John Kasich
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,921     0,023     Jeb Bush
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,753     0,011     Marco Rubio
-                 0,000    0,000    0,000      0,000    0,000      0,000    0,975     0,012     Rick Santorum
-Weighted Avg.    0,617    0,271    0,590      0,617    0,578      0,379    0,733     0,525     
+                 0,523    0,052    0,733      0,523    0,610      0,536    0,791     0,574     Hillary Clinton
+                 0,855    0,586    0,578      0,855    0,689      0,298    0,655     0,583     Donald Trump
+                 0,309    0,084    0,410      0,309    0,352      0,254    0,675     0,263     Ted Cruz
+                 0,049    0,006    0,556      0,049    0,090      0,137    0,628     0,181     Bernie Sanders
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,645     0,014     John Kasich
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,870     0,020     Jeb Bush
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,707     0,006     Marco Rubio
+                 0,000    0,000    0,000      0,000    0,000      0,000    0,668     0,001     Rick Santorum
+Weighted Avg.    0,581    0,309    0,572      0,581    0,532      0,317    0,685     0,471     
 
 === Confusion Matrix ===
 
    a   b   c   d   e   f   g   h   <-- classified as
- 223  97  24   8   0   0   0   0 |   a = Hillary Clinton
-  70 666  44  11   0   0   0   0 |   b = Donald Trump
-   9 146  98   6   0   0   0   0 |   c = Ted Cruz
-   8 162  14  21   0   0   0   0 |   d = Bernie Sanders
-   1  15   0   0   0   0   0   0 |   e = John Kasich
+ 184 124  41   3   0   0   0   0 |   a = Hillary Clinton
+  58 676  52   5   0   0   0   0 |   b = Donald Trump
+   3 176  80   0   0   0   0   0 |   c = Ted Cruz
+   0 174  21  10   0   0   0   0 |   d = Bernie Sanders
+   0  15   1   0   0   0   0   0 |   e = John Kasich
    5   1   0   0   0   0   0   0 |   f = Jeb Bush
-   1   2   0   1   0   0   0   0 |   g = Marco Rubio
+   1   3   0   0   0   0   0   0 |   g = Marco Rubio
    0   1   0   0   0   0   0   0 |   h = Rick Santorum
 
